@@ -59,7 +59,6 @@ class Match(models.Model):
     
 class Chat(models.Model):
     json = models.JSONField()
-    chat_id = models.ForeignKey(Chat, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
