@@ -49,8 +49,8 @@ class Blitz(models.Model):
     
 class Match(models.Model):
     json = models.JSONField()
-    blitz_id = models.ForeignKey(Blitz, on_delete=models.CASCADE)
-    blitz_id_2 = models.ForeignKey(Blitz, on_delete=models.CASCADE)
+    blitz_id = models.ForeignKey(Blitz, on_delete=models.CASCADE, related_name='match_group_1')
+    blitz_id_2 = models.ForeignKey(Blitz, on_delete=models.CASCADE, related_name='match_group_2')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -68,8 +68,8 @@ class Chat(models.Model):
 class Message(models.Model):
     json = models.JSONField()
     text = models.TextField(default="")
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    chat_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_message')
+    chat_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='chat_message')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
