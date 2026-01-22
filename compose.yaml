@@ -5,6 +5,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: MySecret53412@$
       POSTGRES_DB: 10Backend
+    
 
   pgadmin:
     image: dpage/pgadmin4:9.8
